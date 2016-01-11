@@ -1,0 +1,48 @@
+
+    <!DOCTYPE HTML>
+    <html>
+    <meta charset="utf-8">
+    <body>
+   
+   
+   
+    	<canvas id="myCanvas">
+  				Your browser does not support the canvas tag.</canvas>
+  		</canvas>
+   
+    
+    
+    
+    
+    <script type="text/javascript">
+       
+       
+       
+       
+    var canvas=document.getElementById('myCanvas');
+	var ctx=canvas.getContext('2d');
+	// Vertical lines
+	for (var x = 0; x < 500; x += 10) {
+    	ctx.moveTo(x, 0);
+    	ctx.lineTo(x,400);
+	}
+	// Horizontal lines
+	for (var y = 0; y < 400; y += 10) {
+    	ctx.moveTo(0, y);
+    	ctx.lineTo(500, y);
+	}
+ 
+	// Draw in blue
+	ctx.strokeStyle = "#0000FF";
+ 
+	// Until the execution of the next line, nothing has been drawn!
+	ctx.stroke();
+
+    
+    </script>
+    
+    
+	
+  		
+  	</body>
+    </html>

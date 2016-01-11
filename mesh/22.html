@@ -1,0 +1,53 @@
+
+    <!DOCTYPE HTML>
+    <html>
+   <meta charset="utf-8">
+    
+    <head>
+    
+    <title>Some rectangles drawn in immediate mode</title>
+    
+    
+    
+    
+    <script>
+       
+    var canvas, ctx, w, h;
+    function init() {
+        canvas = document.getElementById('myCanvas');
+        ctx = canvas.getContext('2d');
+        w = canvas.width;
+        h = canvas.height;
+        
+        console.time("time to draw");
+        
+        
+        for(var i=0; i < 1000; i++) {
+           var x = Math.random() * w;
+           var y = Math.random() * h;
+           var width = Math.random() * w;
+           var height = Math.random() * h;
+           ctx.strokeRect(x, y, width, height);
+        }
+        
+        console.timeEnd("time to draw");
+        
+    }
+
+    
+    </script>
+    
+    
+    </head>
+    
+    
+    
+    
+    
+    <body onload = init();>
+		<canvas id="myCanvas" width="1000" height =400>
+  				Your browser does not support the canvas tag.</canvas>
+  		</canvas>
+  		
+  	</body>
+    </html>

@@ -1,0 +1,125 @@
+
+    <!DOCTYPE HTML>
+    <html>
+   <meta charset="utf-8">
+    
+    <head>
+    
+    <title>Some rectangles drawn in immediate mode</title>
+    
+    <style>
+        #myCanvas {
+            border: 1px solid #9C9898;
+        }
+        
+        #myCanvas {
+           background-color: #d0e4fe;
+        }
+    </style>
+    
+    
+    <script>
+        var canvas, ctx , Lx,Ly;
+     
+        window.onload = function () {
+           canvas = document.getElementById('myCanvas');
+           ctx = canvas.getContext('2d');
+           
+           
+           Lx = canvas.width;
+           Ly = canvas.height;
+           var gridLength = 50;
+          
+           
+           
+           
+           
+           //gradient ==============================================
+           var grd=ctx.createLinearGradient(0,0,Lx-(Lx/10),0);
+		   grd.addColorStop(0,'#3333ff');
+		   grd.addColorStop(1,'white');
+		   ctx.fillStyle=grd;
+		   ctx.fillRect(0,0,Lx,Ly);
+		   //-----------------------------------------------------------
+		   
+		   
+     
+           //grid =================================
+            for (var x = 0; x < Lx; x += gridLength) {
+    		ctx.moveTo(x, 0);
+    		ctx.lineTo(x,Ly);
+			}
+			// Horizontal lines
+			for (var y = 0; y < Ly; y += gridLength) {
+    		ctx.moveTo(0, y);
+    		ctx.lineTo(Lx, y);
+			}
+			// Draw in blue
+			ctx.strokeStyle = "#C0C0C0";
+			// Until the execution of the next line, nothing has been drawn!
+			ctx.stroke();
+            //---------------------------------------------------------------------
+           
+          
+          
+     
+           // Ellipse Pattern
+         
+           var colorBox = '#000066';
+           var cx = Lx/2,cy =Ly/2;
+           var a = 200,b= 100;
+           var Nellipse = 100;
+           ctx.translate(cx,cy);
+           for (i =0;i<Nellipse;i++){
+           		drawOellipse(a,b);
+           		ctx.rotate(i*(Math.PI/Nellipse));
+           		drawOellipse(a,b);}
+                	
+            } //----end of function--------  
+     
+     
+    //Draw Line
+    function drawLine(xi,yi,xf,yf,fillColor) {
+        // GOOD PRACTICE: save if the function changes the context
+        // or coordinate
+        // system
+        ctx.save();
+        ctx.beginPath();
+      	ctx.moveTo(xi,yi);
+      	ctx.lineTo(xf,yf);
+      	ctx.strokeStyle = fillColor;
+      	ctx.stroke();
+        // GOOD PRACTICE: a restore for a save!
+        ctx.restore();}//---------------------------------------------
+    
+    
+    
+  
+          
+     //Draw ellips at (o,o) to translate     
+     function drawOellipse(a,b){
+         var xo = a, yo = 0;
+         var dphi = (2*Math.PI/1000);
+         
+   		 for (k =0;k<1000;k++){
+   		 		x = a*Math.cos(dphi*k);
+   		 		y = b*Math.sin(dphi*k);
+   		        drawLine(xo,yo,x,y,'blue');
+   		         xo = x;
+   		         yo = y;}}//---------------------------
+       
+          
+    </script>
+    
+    
+    </head>
+    
+    
+    
+    
+    
+    <body>
+         <canvas id="myCanvas" width="1000" height="600">
+         </canvas>
+    </body>
+    </html>

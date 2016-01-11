@@ -1,0 +1,75 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    
+    
+    
+    
+    <head>
+    
+    
+    
+     <style>
+         #myCanvas {
+             border: 1px solid black;
+         }
+     </style>
+     
+     
+     
+     
+    <script>
+    
+       var canvas, ctx;
+       var myColor = ['#FF0000','#00FFFF','#0000FF'];
+       var dx = 20,N = 3;
+      
+       
+       
+       
+       function init() {
+         // This function is called after the page is loaded
+         // 1 - Get the canvas
+         canvas = document.getElementById('myCanvas');
+         // 2 - Get the context
+         ctx=canvas.getContext('2d');
+         // 3 - we can draw
+         
+         drawSomething(dx,N);
+       }
+       
+       
+    
+        function drawSomething(dx,N) {
+         // draw a red rectangle
+         
+         
+         for (i = 0;i<N;i++){
+         a = 40+(i*dx);
+         b = 40+(i*dx);
+         ctx.fillStyle = myColor[i];
+         ctx.fillRect(a,b,dx,dx);
+         }
+         
+         
+         }
+       
+    </script>
+    
+    
+    
+    </head>
+    
+    
+    
+    
+    
+    
+    
+    <body onload="init();">
+        <canvas id="myCanvas" width="200" height="200">
+                Your browser does not support the canvas tag.
+        </canvas>
+    </body>
+    </html>
