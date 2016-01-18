@@ -9,4 +9,4 @@ Jsbin index for 100 JS files
   
 
 ##### Rotate Rectangle
-   -1. (2_rotate_rectangle_01.html): http://jsbin.com/rapeha/1/edit?html,output
+  -1. (2_rotate_rectangle_01.html): http://jsbin.com/rapeha/1/edit?html,output
