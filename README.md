@@ -25,4 +25,4 @@ Jsbin index for 100 JS files
   - 5. (3_circle_art_05.html): http://jsbin.com/rapeha/11/edit?html,output
 
 ##### Grid
-  -1. (grid.html) : http://jsbin.com/rapeha/13/edit?html,output
+  - 1. (grid.html) : http://jsbin.com/rapeha/13/edit?html,output
